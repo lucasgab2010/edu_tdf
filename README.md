@@ -71,13 +71,13 @@ Para ejecutar el **Sistema Experto** en tu máquina local, sigue estos pasos:
 - Activa el entorno virtual con el siguiente comando:
 
   ```bash
-  fastapi-env\Scripts\activate
+  env\Scripts\activate
   ```
 
   > Verás que el prompt cambia y ahora tendrás algo como esto:
 
   ```bash
-  (fastapi-env) C:\Users\Downloads\Edu>
+  (env) C:\Users\Downloads\Edu>
   ```
 
 ### 5. Instalar Dependencias
@@ -89,7 +89,7 @@ Para ejecutar el **Sistema Experto** en tu máquina local, sigue estos pasos:
   ```
 
 ### 6. Abrir el Proyecto en Visual Studio Code
-- Abre **VSCode** y selecciona la carpeta **"FastAPI_Edu"** que contiene el archivo `main.py`.
+- Abre **VSCode** y selecciona la carpeta **"Edu"** que contiene el archivo `main.py`.
 
 ### 7. Levantar el Servidor
 - Abre la terminal de **VSCode** y ejecuta los siguientes comandos:
@@ -103,7 +103,7 @@ Para ejecutar el **Sistema Experto** en tu máquina local, sigue estos pasos:
 - Una vez que el servidor esté en funcionamiento, abre tu navegador y accede a la siguiente dirección:
 
   ```
-  http://localhost:3000/
+  http://localhost:8000/
   ```
 
   > Si la base de conocimiento no está cargada, presiona **F5** o abre una nueva pestaña con la misma URL.
@@ -111,12 +111,6 @@ Para ejecutar el **Sistema Experto** en tu máquina local, sigue estos pasos:
 ---
 
 Si tienes alguna duda o necesitas ayuda adicional, no dudes en consultar la documentación oficial de [FastAPI](https://fastapi.tiangolo.com) o contactar al equipo del proyecto.
-
----
-
-Este formato mejora la legibilidad y proporciona instrucciones claras para la instalación y ejecución del proyecto. ¡Espero que te sirva!
-
-Aquí tienes una versión mejorada del texto para el `README.md` de tu proyecto:
 
 ---
 
@@ -164,7 +158,7 @@ FastAPI maneja las solicitudes a través de funciones vinculadas a las rutas. La
 
 ### 4. Respuesta en Formato JSON
 
-FastAPI convierte automáticamente los diccionarios devueltos, como `{"diagnosis": diagnosis}` o `{"question": next_question}`, en respuestas JSON. Esto facilita la interacción entre el **frontend** (JavaScript) y el **backend**.
+FastAPI convierte automáticamente los diccionarios devueltos, como `{"edu": edu}` o `{"question": next_question}`, en respuestas JSON. Esto facilita la interacción entre el **frontend** y el **backend**.
 
 ## Descripción del Sistema de Inferencia
 
