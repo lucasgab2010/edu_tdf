@@ -1,5 +1,4 @@
 ![politec]https://github.com/lucasgab2010/edu_tdf/blob/main/img/poli.jpg
-Aquí tienes una versión mejorada del texto para el `README.md` de tu proyecto, con un estilo más claro y organizado:
 
 ---
 
@@ -171,5 +170,3 @@ FastAPI convierte automáticamente los diccionarios devueltos, como `{"diagnosis
 Este código implementa un sistema de inferencia secuencial, en el cual se ejecuta un motor de preguntas basado en una lista de síntomas predefinida. El sistema avanza por cada síntoma y, cuando se cumplen todos los síntomas de una entrada en la base de conocimiento, ofrece un diagnóstico.
 
 ---
-
-Esta versión está mejor estructurada y proporciona más claridad sobre cómo funciona el sistema experto, así como detalles sobre la implementación técnica.
