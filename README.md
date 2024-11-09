@@ -162,6 +162,11 @@ FastAPI convierte automáticamente los diccionarios devueltos, como `{"edu": edu
 
 ## Descripción del Sistema de Inferencia
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
 Este código implementa un sistema de inferencia secuencial, en el cual se ejecuta un motor de preguntas basado en una lista de síntomas predefinida. El sistema avanza por cada síntoma y, cuando se cumplen todos los síntomas de una entrada en la base de conocimiento, ofrece un diagnóstico.
 
 ---
