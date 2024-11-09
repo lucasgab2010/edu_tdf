@@ -1,4 +1,5 @@
-![politec]https://github.com/lucasgab2010/edu_tdf/blob/main/img/poli.jpg
+![politec](https://github.com/lucasgab2010/edu_tdf/raw/main/img/poli.jpg)
+
 
 ---
 
