@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot - Sistema Experto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        #chatbox {
+            width: 320px;
+            height: 450px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #userInput {
+            width: 85%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .chat-message {
+            padding: 6px 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .chat-message.user {
+            background-color: #e1f5fe;
+            text-align: right;
+        }
+        .chat-message.bot {
+            background-color: #f1f8e9;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Chatbot - Sistema Experto</h2>
+        <div id="chatbox"></div>
+        <input type="text" id="userInput" placeholder="Escribe tu respuesta">
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+    
+    <script>
+        let currentEntryIndex = 0;
+        let currentPropIndex = 0;
+        let entries = [];
+
+        async function loadEntries() {
+            const chatbox = document.getElementById("chatbox");
+            try {
+                const response = await fetch("/entries");
+                const data = await response.json();
+                if (data.entries) {
+                    entries = data.entries;
+                    chatbox.innerHTML += `<p>Bienvenido al chatbot Sistema Experto. ¡Comencemos!</p>`;
+                    askNextQuestion();
+                } else {
+                    chatbox.innerHTML += `<p><strong>Error:</strong> Datos no encontrados.</p>`;
+                }
+            } catch (error) {
+                chatbox.innerHTML += `<p><strong>Error:</strong> No se pudieron cargar los datos.</p>`;
+            }
+        }
+
+        function askNextQuestion() {
+            const chatbox = document.getElementById("chatbox");
+            const entry = entries[currentEntryIndex];
+
+            if (currentPropIndex < entry.props.length) {
+                chatbox.innerHTML += `<p><strong>Chatbot:</strong> ${entry.props[currentPropIndex]}</p>`;
+            } else {
+                concludeEntry(entry);
+            }
+            scrollChatToBottom();
+        }
+
+        function concludeEntry(entry) {
+            const chatbox = document.getElementById("chatbox");
+            chatbox.innerHTML += `<p><strong>Chatbot:</strong> Conclusión: Tienes ${entry.name}. Carreras recomendadas: ${entry.description}.</p>`;
+            currentEntryIndex++;
+            currentPropIndex = 0;
+
+            if (currentEntryIndex < entries.length) {
+                chatbox.innerHTML += `<p><strong>Chatbot:</strong> Vamos a la siguiente inteligencia.</p>`;
+                askNextQuestion();
+            } else {
+                chatbox.innerHTML += `<p><strong>Chatbot:</strong> Fin del proceso. Gracias por participar.</p>`;
+            }
+            scrollChatToBottom();
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById("userInput").value.toLowerCase().trim();
+            const chatbox = document.getElementById("chatbox");
+
+            if (!userInput) {
+                chatbox.innerHTML += `<p><strong>Chatbot:</strong> Por favor, responde con "sí" o "no".</p>`;
+                document.getElementById("userInput").value = "";
+                scrollChatToBottom();
+                return;
+            }
+
+            chatbox.innerHTML += `<p><strong>Tú:</strong> ${userInput}</p>`;
+            
+            if (isYesResponse(userInput)) {
+                currentPropIndex++;
+                askNextQuestion();
+            } else if (isNoResponse(userInput)) {
+                handleNoResponse();
+            } else {
+                chatbox.innerHTML += `<p><strong>Chatbot:</strong> Por favor, responde con "sí" o "no".</p>`;
+            }
+
+            document.getElementById("userInput").value = "";
+            scrollChatToBottom();
+        }
+
+        function handleNoResponse() {
+            const chatbox = document.getElementById("chatbox");
+            const entry = entries[currentEntryIndex];
+
+            if (currentPropIndex === 0) {
+                currentEntryIndex++;
+                currentPropIndex = 0;
+                if (currentEntryIndex < entries.length) {
+                    chatbox.innerHTML += `<p><strong>Chatbot:</strong> Pasamos a la siguiente inteligencia.</p>`;
+                    askNextQuestion();
+                } else {
+                    chatbox.innerHTML += `<p><strong>Chatbot:</strong> Fin del proceso. Gracias por participar.</p>`;
+                }
+            } else if (currentPropIndex === entry.props.length - 1) {
+                chatbox.innerHTML += `<p><strong>Chatbot:</strong> ${entry.description_no}</p>`;
+                currentEntryIndex++;
+                currentPropIndex = 0;
+                if (currentEntryIndex < entries.length) {
+                    chatbox.innerHTML += `<p><strong>Chatbot:</strong> Vamos a la siguiente inteligencia.</p>`;
+                    askNextQuestion();
+                } else {
+                    chatbox.innerHTML += `<p><strong>Chatbot:</strong> Fin del proceso. Gracias por participar.</p>`;
+                }
+            } else {
+                chatbox.innerHTML += `<p><strong>Chatbot:</strong> No tenemos carrera recomendada para eso. Reiniciando el proceso...</p>`;
+                currentEntryIndex = 0;
+                currentPropIndex = 0;
+                askNextQuestion();
+            }
+
+            scrollChatToBottom();
+        }
+
+        function isYesResponse(input) {
+            const yesResponses = ["sí", "si", "s", "yes", "y", "affirmative"];
+            return yesResponses.includes(input);
+        }
+
+        function isNoResponse(input) {
+            const noResponses = ["no", "n", "nope", "nah", "negative"];
+            return noResponses.includes(input);
+        }
+
+        function scrollChatToBottom() {
+            const chatbox = document.getElementById("chatbox");
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+
+        window.onload = loadEntries;
+    </script>
+</body>
+</html>

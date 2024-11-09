@@ -1,0 +1,99 @@
+{
+  "__v": 1,
+  "description": "Base de conocimiento de educación a distancia",
+  "entries": [
+    {
+      "name": "Inteligencia Lingüística",
+      "props": [
+        "Te gusta escribir poemas, cuentos o novelas",
+        "Te gusta la lectura",
+        "Te gusta escuchar a los demás",
+        "Te gusta aprender otros idiomas"
+      ],
+      "description": "Profesorado en Inglés, Licenciatura en Periodismo, Licenciatura en Publicidad, Licenciatura en Relaciones Internacionales Licenciatura en Relaciones Públicas e Institucionales, Licenciatura en Sociología, Licenciatura en Ciencia Política y Gobierno, Licenciatura en Medios Audiovisuales. Abogacía",
+      "description_no": "Tec. Sup. en Comunicación Social, Tecnicatura en Dirección de Protocolo, Organización de Eventos y Relaciones Públicas, Profesorado de Educación Secundaria en Lengua y Literatura, Procurador"
+    },
+   
+    {
+      "name": "Inteligencia Lógica",
+      "props": [
+        "Te gustan las matemáticas y el cálculo",
+        "Tienes capacidad de abstracción y razonamiento",
+        "Tienes capacidad de resolver problemas lógicos",
+        "Te gustan los juegos de estrategia",
+        "Tienes capacidad de deducción"
+      ],
+      "description": "Licenciatura en Economía, Licenciatura en Ciencias de Datos, Licenciatura en Matemática, Licenciatura en Logística Global, Ingeniería Industrial, Ingeniería Electromecánica, Licenciatura en Actuario, Licenciatura en Inteligencia Artificial y Robótica, Licenciatura en Contabilidad y Auditoría",
+      "description_no": "Tecnicatura en Programación, Tec. Sup. en Desarrollo de Software. Tecnicatura en Administración y Gestión Tributaria, Tecnicatura en Redes Informáticas y Telecomunicaciones, Tecnicatura Superior en Seguridad Informática, Tecnicatura Ciencia de Datos e Inteligencia Artificial"
+    },
+    {
+      "name": "Inteligencia Espacial",
+      "props": [
+        "Puedes crear imágenes en tu mente",
+        "Puedes crear estructuras en tu mente",
+        "Eres detallista en lo que miras",
+        "Puedes acomodar cosas fácilmente",
+        "Te gusta dibujar"
+      ],
+      "description": "Licenciatura en Medios Audiovisuales, Licenciatura en Publicidad, Licenciatura en Diseño y Animación Digital",
+      "description_no": "Tecnicatura en Gestión de Moda, Formación de Diseñadores Gráficos, Tecnicatura en Diseño y Animación Digital, Tecnicatura en Marketing y Publicidad Digital"
+    },
+    {
+      "name": "Inteligencia Corporal",
+      "props": [
+        "Tienes coordinación corporal",
+        "Tienes equilibrio",
+        "Tienes flexibilidad",
+        "Te gustan los deportes",
+        "Te gusta bailar"
+      ],
+      "description": "Licenciatura en Educación Física",
+      "description_no": "Tecnicatura en Promoción Comunitaria en Niñez y Adolescencia, Tec. Sup. en Mantenimiento Industrial con orient. en Seguridad e Higiene en el Trabajo, Tec. Sup. en Enfermería, Licenciatura en Terapia Ocupacional y Desarrollo Humano"
+    },
+    {
+      "name": "Inteligencia Musical",
+      "props": [
+        "Te gusta la música",
+        "Puedes diferenciar notas musicales",
+        "Tienes ritmo",
+        "Te gusta tocar algún instrumento musical"
+      ],
+      "description": "Profesorado de Música con Orientación en Guitarra",
+      "description_no": "No hay carrera"
+    },
+    {
+      "name": "Inteligencia Interpersonal",
+      "props": [
+        "Te gusta trabajar en equipo",
+        "Sueles entender los sentimientos de los demás",
+        "Entiendes las intenciones de los demás",
+        "Sabes interpretar el lenguaje corporal",
+        "Te gusta conocer gente nueva"
+      ],
+      "description": "Licenciatura en Recursos Humanos, Licenciatura en Gestión de Recursos Humanos, Licenciatura en Gerontología, Licenciatura en Educación, Licenciatura en Relaciones Públicas e Institucionales, Licenciatura en Criminología y Seguridad, Licenciatura en Seguridad Pública", 
+      "description_no": "Tec. Sup. en Venta Directa, Tec. Sup. en Relaciones Laborales, Profesorado de Educación Secundaria en Geografía, Profesorado de Educación Primaria, Profesorado de Educación Inicial"
+    },
+    {
+      "name": "Inteligencia Intrapersonal",
+      "props": [
+        "Te gusta trabajar solo",
+        "Tienes mucha autoestima",
+        "Sueles pensar en tus metas",
+        "Conoces tus fortalezas y debilidades"
+      ],
+      "description": "Licenciatura en Psicología, Licenciatura en Antropología Organizacional, Licenciatura en Gerontología",
+      "description_no": "Tec. Sup. en Acompañamiento Terapéutico, Tecnicatura en Promoción Comunitaria en Niñez y Adolescencia, Profesorado de Educación Especial c/ Orientación en Discapacidad Intelectual"
+    },
+    {
+      "name": "Inteligencia Naturalista",
+      "props": [
+        "Te gusta viajar",
+        "Te gusta la fauna y flora",
+        "Te gusta cuidar plantas o animales",
+        "Te preocupa el medio ambiente"
+      ],
+      "description": "Profesorado de Biología, Licenciatura en Gestión Ambiental, Licenciatutra en Turismo",
+      "description_no": "Tec. Sup. en Petróleo, Tec. Sup. en Industrias de Procesos Químicos, Licenciatura en Higiene, Seguridad y Medioambiente del Trabajo"
+    }
+  ]
+}
