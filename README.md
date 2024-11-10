@@ -14,7 +14,7 @@
 **Alumno**: Gabriel García
 
 ---
-[Descargar video](https://github.com/lucasgab2010/edu_tdf/blob/main/video/sp_gg.mp4?raw=true)
+[Descargar video](https://github.com/lucasgab2010/edu_tdf/raw/main/video/sp_gg.mp4)
 ---
 
 ## Descripción del Proyecto
